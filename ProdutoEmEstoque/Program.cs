@@ -8,15 +8,15 @@ namespace ProdutoEmEstoque
     {
         static void Main(string[] args)
         {
-            Produto p = new();
-            
             Console.WriteLine("Entre com os dados do produto: ");
             Console.Write("Nome: ");
-            p.Nome = Console.ReadLine();
+            string? nome = Console.ReadLine();
             Console.Write("Preço: ");
-            p.Preco = double.Parse(Console.ReadLine() ?? "0", CultureInfo.InvariantCulture);
+            double preco = double.Parse(Console.ReadLine() ?? "0", CultureInfo.InvariantCulture);
             Console.Write("Quantidade no Estoque: ");
-            p.Quantidade = int.Parse(Console.ReadLine() ?? "0");
+            int quantidade = int.Parse(Console.ReadLine() ?? "0");
+
+            Produto p = new(nome, preco, quantidade);
 
             Console.WriteLine("Dados do produto: " + p);
             Console.WriteLine();
